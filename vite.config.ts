@@ -11,5 +11,5 @@ export default defineConfig({
          "@": resolve(__dirname, "/src"),
       },
    },
-   base: "https://MCMike0399.github.io/test-valemaq-123",
+   base: "/test-valemaq-123/",
 });
