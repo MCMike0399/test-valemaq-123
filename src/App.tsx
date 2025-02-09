@@ -5,17 +5,64 @@ import StatusPlanesPermisos from "./servicios-personalizados/StatusPlanesPermiso
 import TiraMaterias from "./servicios-personalizados/TiraMaterias";
 import HistorialAcademico from "./servicios-personalizados/HistorialAcademico";
 import AccessDenied from "./edsup/AccessDenied";
+import LoginPage from "./home/LoginPage";
+import { AuthProvider } from "./AuthContext";
+import ProtectedRoute from "./ProtectedRoute";
 
 export default function App() {
    return (
-      <Routes>
-         <Route path="/" element={<h1>Hola Mundo</h1>} />
-         <Route path="/edsup" element={<EdsupPage />} />
-         <Route path="/edsup/consulta-saldos" element={<ServiciosFinancieros />} />
-         <Route path="/edsup/status-planes-permisos" element={<StatusPlanesPermisos />} />
-         <Route path="/edsup/tira-materias" element={<TiraMaterias />} />
-         <Route path="/edsup/historial-academico" element={<HistorialAcademico />} />
-         <Route path="/edsup/access-denied" element={<AccessDenied />} />
-      </Routes>
+      <AuthProvider>
+         <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route
+               path="/edsup"
+               element={
+                  <ProtectedRoute>
+                     <EdsupPage />
+                  </ProtectedRoute>
+               }
+            />
+            <Route
+               path="/edsup/consulta-saldos"
+               element={
+                  <ProtectedRoute>
+                     <ServiciosFinancieros />
+                  </ProtectedRoute>
+               }
+            />
+            <Route
+               path="/edsup/status-planes-permisos"
+               element={
+                  <ProtectedRoute>
+                     <StatusPlanesPermisos />
+                  </ProtectedRoute>
+               }
+            />
+            <Route
+               path="/edsup/tira-materias"
+               element={
+                  <ProtectedRoute>
+                     <TiraMaterias />
+                  </ProtectedRoute>
+               }
+            />
+            <Route
+               path="/edsup/historial-academico"
+               element={
+                  <ProtectedRoute>
+                     <HistorialAcademico />
+                  </ProtectedRoute>
+               }
+            />
+            <Route
+               path="/edsup/access-denied"
+               element={
+                  <ProtectedRoute>
+                     <AccessDenied />
+                  </ProtectedRoute>
+               }
+            />
+         </Routes>
+      </AuthProvider>
    );
 }
