@@ -8,9 +8,17 @@ export default function LoginPage() {
    const navigate = useNavigate();
    const [username, setUsername] = useState("");
    const [password, setPassword] = useState("");
+   const [isLoading, setIsLoading] = useState(false);
 
-   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+   const timeOutPromise = async (ms: number) => {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+   };
+
+   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
+      setIsLoading(true);
+      await timeOutPromise(2000);
+      setIsLoading(false);
       if (username === "soyvale123" && password === "admin") {
          setIsAuthenticated(true);
          navigate("/edsup");
@@ -46,8 +54,12 @@ export default function LoginPage() {
                      placeholder="Password"
                      className="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:border-[#016852] flex-1"
                   />
-                  <button type="submit" className="bg-[#016852] hover:bg-[#014f3f] text-white px-4 py-1 rounded">
-                     Sign In
+                  <button
+                     disabled={isLoading}
+                     type="submit"
+                     className="bg-[#016852] hover:bg-[#014f3f] text-white px-4 py-1 rounded"
+                  >
+                     {isLoading ? "Loading..." : "Sign in"}
                   </button>
                </form>
 
