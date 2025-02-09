@@ -9,13 +9,13 @@ import AccessDenied from "./edsup/AccessDenied";
 export default function App() {
    return (
       <Routes>
-         <Route path="/" element={<h1>Hola Mundo</h1>} />
-         <Route path="/edsup" element={<EdsupPage />} />
-         <Route path="/edsup/consulta-saldos" element={<ServiciosFinancieros />} />
-         <Route path="/edsup/status-planes-permisos" element={<StatusPlanesPermisos />} />
-         <Route path="/edsup/tira-materias" element={<TiraMaterias />} />
-         <Route path="/edsup/historial-academico" element={<HistorialAcademico />} />
-         <Route path="/edsup/access-denied" element={<AccessDenied />} />
+         <Route path="/test-valemaq-123" element={<h1>Hola Mundo</h1>} />
+         <Route path="/test-valemaq-123/edsup" element={<EdsupPage />} />
+         <Route path="/test-valemaq-123/edsup/consulta-saldos" element={<ServiciosFinancieros />} />
+         <Route path="/test-valemaq-123/edsup/status-planes-permisos" element={<StatusPlanesPermisos />} />
+         <Route path="/test-valemaq-123/edsup/tira-materias" element={<TiraMaterias />} />
+         <Route path="/test-valemaq-123/edsup/historial-academico" element={<HistorialAcademico />} />
+         <Route path="/test-valemaq-123/edsup/access-denied" element={<AccessDenied />} />
       </Routes>
    );
 }
