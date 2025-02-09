@@ -1,0 +1,1 @@
+export type Tab = "student" | "personalized" | "financial" | "records";
