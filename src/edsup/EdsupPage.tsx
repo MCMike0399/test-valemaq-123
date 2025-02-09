@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import { Fragment } from "react";
 import TopBar from "./components/TopBar";
 import MainContainer from "./MainContainer";
@@ -25,32 +26,29 @@ export default function EdsupPage() {
          {/* Breadcrumb Navigation */}
          <nav className="px-8 mb-4">
             <div className="text-md text-gray-700">
-               <a href="#" className="text-blue-700 hover:underline">
-                  Home
-               </a>{" "}
-               <span className="text-gray-500"> &gt; </span>{" "}
-               <a
-                  href="#"
+               <a className="text-blue-700 hover:underline">Home</a> <span className="text-gray-500"> &gt; </span>{" "}
+               <Link
                   onClick={() => setTab("student")}
                   className={`text-${tab === "student" ? "gray-700" : "blue-700"} hover:underline`}
+                  to={"/edsup"}
                >
                   Student
-               </a>{" "}
+               </Link>{" "}
                {tab !== "student" && (
                   <Fragment>
                      <span className="text-gray-500"> &gt; </span>{" "}
                      {tab === "records" ? (
-                        <a href="#" className="text-gray-700 ">
+                        <Link to="/edsup" className="text-gray-700 ">
                            Student Records
-                        </a>
+                        </Link>
                      ) : tab === "personalized" ? (
-                        <a href="#" className="text-gray-700 ">
+                        <Link to="/edsup" className="text-gray-700 ">
                            Servicios Personalizados
-                        </a>
+                        </Link>
                      ) : tab === "financial" ? (
-                        <a href="#" className="text-gray-700">
+                        <Link to="/edsup" className="text-gray-700">
                            Servicios Financieros
-                        </a>
+                        </Link>
                      ) : null}
                   </Fragment>
                )}

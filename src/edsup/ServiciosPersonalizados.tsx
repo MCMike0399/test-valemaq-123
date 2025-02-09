@@ -1,11 +1,9 @@
 import { Fragment } from "react/jsx-runtime";
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 import ContainerHeader from "./components/ContainerHeader";
 import ContainerFooter from "./components/ContainerFooter";
 
 export default function ServiciosPersonalizados() {
-   const navigate = useNavigate();
-
    return (
       <Fragment>
          {/* Botones de selección */}
@@ -35,27 +33,22 @@ export default function ServiciosPersonalizados() {
                   "Solicitud de Historial Académico de Licenciatura",
                ].map((item, index) => {
                   return (
-                     <a
-                        onClick={() => {
-                           if (
-                              item ===
-                              "Status, permisos y planes de estudio para la inscripción (PRIMAVERA 2025 LICENCIATURA)"
-                           ) {
-                              navigate("/edsup/status-planes-permisos");
-                           } else if (item === "Tira de Materias (PRIMAVERA 2025 LICENCIATURA)") {
-                              navigate("/edsup/tira-materias");
-                           } else if (item === "Solicitud de Historial Académico de Licenciatura") {
-                              navigate("/edsup/historial-academico");
-                           } else {
-                              navigate("/edsup/access-denied");
-                           }
-                        }}
+                     <Link
+                        to={`${
+                           item ===
+                           "Status, permisos y planes de estudio para la inscripción (PRIMAVERA 2025 LICENCIATURA)"
+                              ? "/edsup/status-planes-permisos"
+                              : item === "Tira de Materias (PRIMAVERA 2025 LICENCIATURA)"
+                              ? "/edsup/tira-materias"
+                              : item === "Solicitud de Historial Académico de Licenciatura"
+                              ? "/edsup/historial-academico"
+                              : "/edsup/access-denied"
+                        }`}
                         key={index}
-                        href="#"
                         className=" group block text-blue-600 rounded-md border border-transparent transition-all duration-200"
                      >
                         {item}
-                     </a>
+                     </Link>
                   );
                })}
             </div>

@@ -1,7 +1,6 @@
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 
 export default function ContainerHeader() {
-   const navigate = useNavigate();
    return (
       <div className="flex gap-2 mx-4 mb-[-2px] font-[Arial]">
          <button
@@ -18,9 +17,8 @@ export default function ContainerHeader() {
                color: "#2d556e",
                fontFamily: "'Arial', Helvetica, sans-serif",
             }}
-            onClick={() => navigate("/edsup")}
          >
-            <a href="#">Student</a>
+            <Link to="/edsup">Student</Link>
          </button>
       </div>
    );

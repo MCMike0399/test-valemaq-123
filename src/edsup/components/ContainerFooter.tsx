@@ -6,9 +6,7 @@ export default function ContainerFooter() {
             style={{ fontFamily: "'Arial', Helvetica, sans-serif" }}
          >
             <span>© 2025 Blueian Company L.P. and its affiliates. RELEASE & 7.2</span>
-            <a href="#" className="hover:text-[#8ba0b0] font-medium">
-               SITE MAP
-            </a>
+            <a className="hover:text-[#8ba0b0] font-medium">SITE MAP</a>
          </div>
       </div>
    );

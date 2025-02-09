@@ -1,10 +1,9 @@
 import { Fragment } from "react/jsx-runtime";
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 import ContainerHeader from "./components/ContainerHeader";
 import ContainerFooter from "./components/ContainerFooter";
 
 export default function ServiciosFinancieros() {
-   const navigate = useNavigate();
    return (
       <Fragment>
          {/* Botones de selección */}
@@ -28,20 +27,13 @@ export default function ServiciosFinancieros() {
                   "Consulta de Saldos",
                ].map((item, index) => {
                   return (
-                     <a
-                        onClick={() => {
-                           if (item === "Consulta de Saldos") {
-                              navigate("/edsup/consulta-saldos");
-                           } else {
-                              navigate("/edsup/access-denied");
-                           }
-                        }}
+                     <Link
                         key={index}
-                        href="#"
                         className=" group block text-blue-600 rounded-md border border-transparent transition-all duration-200"
+                        to={`${item === "Consulta de Saldos" ? "/edsup/consulta-saldos" : "/edsup/access-denied"}`}
                      >
                         {item}
-                     </a>
+                     </Link>
                   );
                })}
             </div>

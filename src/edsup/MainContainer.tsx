@@ -1,5 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 import { Dispatch, SetStateAction } from "react";
 import { Tab } from "./types";
 import ContainerHeader from "./components/ContainerHeader";
@@ -10,7 +10,6 @@ type Props = {
 };
 
 export default function MainContainer({ setTab }: Props) {
-   const navigate = useNavigate();
    return (
       <Fragment>
          {/* Botones de selección */}
@@ -29,11 +28,8 @@ export default function MainContainer({ setTab }: Props) {
             <div className="rounded-lg max-w-6xl mx-auto">
                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full justify-items-stretch">
                   {/* Student Records */}
-                  <div
-                     onClick={() => navigate("/edsup/access-denied")}
-                     className="bg-[#ebf5f8] rounded-md p-4 border border-[#cbd5e1] flex flex-col max-w-sm group"
-                  >
-                     <a href="#">
+                  <div className="bg-[#ebf5f8] rounded-md p-4 border border-[#cbd5e1] flex flex-col max-w-sm group">
+                     <Link to="/edsup/access-denied">
                         <h3 className="text-[#2d556e] font-semibold mb-3 text-[15px] group-hover:text-[#f59b41]">
                            Student Records
                         </h3>
@@ -42,7 +38,7 @@ export default function MainContainer({ setTab }: Props) {
                            <p>Display your grades and transcripts;</p>
                            <p>Review charges and payments.</p>
                         </div>
-                     </a>
+                     </Link>
                   </div>
 
                   {/* Servicios Personalizados */}
@@ -50,7 +46,7 @@ export default function MainContainer({ setTab }: Props) {
                      onClick={() => setTab("personalized")}
                      className="bg-[#ebf5f8] rounded-md p-4 border border-[#cbd5e1] flex flex-col max-w-sm group"
                   >
-                     <a href="#">
+                     <Link to="/edsup">
                         <h3 className="text-[#2d556e] font-semibold mb-3 text-[15px] group-hover:text-[#f59b41]">
                            Servicios Personalizados
                         </h3>
@@ -60,7 +56,7 @@ export default function MainContainer({ setTab }: Props) {
                            <br />
                         </div>{" "}
                         {/* Espaciador vertical */}
-                     </a>
+                     </Link>
                   </div>
 
                   {/* Servicios Financieros */}
@@ -68,7 +64,7 @@ export default function MainContainer({ setTab }: Props) {
                      onClick={() => setTab("financial")}
                      className="bg-[#ebf5f8] rounded-md p-4 border border-[#cbd5e1] flex flex-col max-w-sm group"
                   >
-                     <a href="#">
+                     <Link to="/edsup">
                         <h3 className="text-[#2d556e] font-semibold mb-3 text-[15px] group-hover:text-[#f59b41]">
                            Servicios Financieros
                         </h3>
@@ -77,7 +73,7 @@ export default function MainContainer({ setTab }: Props) {
                            <p>Revisa los pagos de la primera exhibición;</p>
                            <p>Realiza el primer paso de inscripción.</p>
                         </div>
-                     </a>
+                     </Link>
                   </div>
                </div>
             </div>

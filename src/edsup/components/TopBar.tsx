@@ -19,12 +19,12 @@ export default function TopBar() {
             {/* Enlaces de la derecha */}
             <div className="flex items-center gap-3">
                <a
-                  href="#"
+                  
                   className="text-white text-sm font-medium hover:text-opacity-80 transition-all pr-3 border-r border-white/50"
                >
                   Sign Out
                </a>
-               <a href="#" className="text-white text-sm font-medium hover:text-opacity-80 transition-all">
+               <a className="text-white text-sm font-medium hover:text-opacity-80 transition-all">
                   Help
                </a>
             </div>

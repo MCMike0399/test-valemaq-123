@@ -8,7 +8,7 @@ export default function ConsultaSaldos() {
       { fecha: "30-12-2024", descripcion: "SALDO ANTERIOR", importe: -50.1, saldo: -50.1 },
       { descripcion: "--- Exhibicion 1 ---" },
       { fecha: "06-01-2025", descripcion: "COLEGIATURA 38 CREDITOS", importe: 33768.0, saldo: 33767.9 },
-      { fecha: "06-01-2025", descripcion: "DEP. LIN. BANCOMER 880-2 LLC", importe: -535000.0, saldo: -51232.1 },
+      { fecha: "06-01-2025", descripcion: "DEP. LIN. BANCOMER 880-2 LLC", importe: -35000.0, saldo: -1232.1 },
       { fecha: "16-01-2025", descripcion: "ESTACIONAMIENTO MENSUAL ENE.", importe: 949.0, saldo: -5283.1 },
       { fecha: "30-01-2025", descripcion: "CUOTA SALTAM", importe: 350.0, saldo: 66.9 },
       { descripcion: "--- Exhibicion 2 ---" },
