@@ -19,7 +19,7 @@ export default function LoginPage() {
       setIsLoading(true);
       await timeOutPromise(2000);
       setIsLoading(false);
-      if (username === "soyvale123" && password === "admin") {
+      if (username === "vandrad7@itam.mx" && password === "Valiwis2003.") {
          setIsAuthenticated(true);
          navigate("/edsup");
       }
